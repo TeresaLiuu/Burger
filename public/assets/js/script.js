@@ -8,7 +8,7 @@ $(function(){
             devoured: 0
         };
 
-        $.ajax('api/burgers', {
+        $.ajax('/api/burgers', {
             type: 'POST',
             data: newBurger
         }).then (function(){
@@ -24,7 +24,7 @@ $(function(){
             devoured:1
         };
 
-        $.ajax('api/burgers/' + id,{
+        $.ajax('/api/burgers/' + id,{
             type: 'PUT',
             data: devouredState
         }).then(function(){
@@ -37,11 +37,11 @@ $(function(){
         event.preventDefault();
         const id = $(this).data('id');
 
-        $.ajax('api/burgers/' + id,{
+        $.ajax('/api/burgers/' + id,{
             type: 'DELETE'
         }).then(function(){
             console.log('burger deleteds', id);
             location.reload();
         });
     });
-})
+});

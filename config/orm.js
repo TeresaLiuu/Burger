@@ -13,27 +13,21 @@ function printQuestionMarks(num) {
 function objToSql(ob) {
     const arr = [];
     for (const key in ob) {
-        const value = ob[key];
-        if (Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === 'string' && value.indexOf('') >= 0) {
-                value = " ' " + value + " ' ";
-            }
-            arr.pust(key + '=' + value);
-        }
+      arr.push(key + '=' + ob[key]);
     }
     return arr.toString();
 };
 
-var orm = {
+const orm = {
     selectAll: function (table, cb) {
-        const queryString = 'SELECT * FROM' + table + ';';
-        connection.query(queryString, (err, resutl) => {
+        let queryString = 'SELECT * FROM ' + table + ';';
+        connection.query(queryString, (err, result) => {
             if (err) throw err;
             cb(result);
         });
     },
     insertOne: function (table, cols, vals, cb) {
-        const queryString = 'INSERT INTO' + table;
+        let queryString = 'INSERT INTO' + table;
         queryString += '(';
         queryString += cols.toString();
         queryString += ')';
@@ -49,7 +43,7 @@ var orm = {
         });
     },
     updateOne: function (table, objColVals, condition, cb) {
-        const queryString = 'UPDATE' + table;
+        let queryString = 'UPDATE' + table;
         queryString += 'SET';
         queryString += objToSql(objColVals);
         queryString += 'WHERE';
@@ -61,6 +55,19 @@ var orm = {
             if (err) throw err;
             cb(result);
         });
+    },
+
+    deleteOne: function (table, condition, cb) {
+        let queryString = 'DELETE FROM' + table;
+        queryString += 'WHERE';
+        queryString += condition;
+
+        console.log(queryString);
+
+        connection.query(queryString, (err, result) => {
+            if (err) throw err;
+            cb(result);
+        })
     }
 };
 
