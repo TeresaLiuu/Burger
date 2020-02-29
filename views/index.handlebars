@@ -1,22 +1,19 @@
-{{!-- Setup the index.handlebars to have the template that Handlebars can render onto. --}}
 <div class="container">
 
     <div class="jumbotron">
         <h1 id="color-override">Eat the Burger</h1>
-        <p id="color-override">Make burgers, eat burgers.</p>
         <br>
-        <h2 id="color-override">Make a Burger</h2>
         <panel>
             <form class="create-form">
                 <div class="form-group">
                     <label for="newburger" id="color-override">New Burger:</label>
                     <input type="text" id="newburger" name="burger">
-                    {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
-                    <button type="submit" class="btn btn-success" id="addburger"><span class="fa fa-thumbs-up"></span></button>
+                    {{!-- a button in index.handlebars that will submit the user input into the database. --}}
+                    <button type="submit" class="btn btn-success" id="addburger"><span class="fas fa-hamburger"></span></button>
                 </div>
             </form>
         </panel>
-    </div><!-- /jumbotron -->
+    </div>
 
     <div class="row">
         <!-- Undevoured Burgers -->
@@ -53,6 +50,6 @@
                 </div>
             </div>
         </div>
-    </div><!-- /row -->
+    </div>
 
-</div><!-- /container -->
+</div>

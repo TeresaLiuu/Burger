@@ -1,6 +1,6 @@
 'use strict';
 
-const connection = require('../config/connection');
+const connection = require('../config/connection.js');
 
 function printQuestionMarks(num) {
     const arr = [];
@@ -21,7 +21,7 @@ function objToSql(ob) {
 const orm = {
     selectAll: function (table, cb) {
         let queryString = 'SELECT * FROM ' + table + ';';
-        connection.query(queryString, (err, result) => {
+        connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
         });
@@ -37,7 +37,7 @@ const orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, vals, (err, result) => {
+        connection.query(queryString, vals, function(err, result){
             if (err) throw err;
             cb(result);
         });
@@ -51,7 +51,7 @@ const orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, (err, result) => {
+        connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
         });
@@ -64,7 +64,7 @@ const orm = {
 
         console.log(queryString);
 
-        connection.query(queryString, (err, result) => {
+        connection.query(queryString, function(err, result){
             if (err) throw err;
             cb(result);
         })

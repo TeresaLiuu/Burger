@@ -1,6 +1,6 @@
 'use strict';
 
-const orm = require('../config/orm');
+const orm = require('../config/orm.js');
 
 const burger = {
     selectAll: function (cb) {

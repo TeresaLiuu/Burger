@@ -1,0 +1,35 @@
+.jumbotron{
+    background-image: url("../img/SpongeBobKrusty.png");
+    background-position: right top;
+    margin-bottom: 80px;
+    background-size: 300px 200px;
+    background-repeat: no-repeat;
+}
+
+
+
+#newburger {
+    border-radius: 5px;
+}
+
+#color-override {
+    color: black;
+}
+
+#lefthead {
+    background-color: skyblue;
+    color: black;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#eatbutton, #trashbutton {
+    float: right;
+}
+
+#righthead {
+    background-color: skyblue;
+    color: black;
+    text-align: center;
+    font-size: 1.2em;
+}
