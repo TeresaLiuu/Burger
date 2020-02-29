@@ -27,7 +27,7 @@ const orm = {
         });
     },
     insertOne: function (table, cols, vals, cb) {
-        let queryString = 'INSERT INTO' + table;
+        let queryString = ' INSERT INTO ' + table;
         queryString += '(';
         queryString += cols.toString();
         queryString += ')';
@@ -43,10 +43,10 @@ const orm = {
         });
     },
     updateOne: function (table, objColVals, condition, cb) {
-        let queryString = 'UPDATE' + table;
-        queryString += 'SET';
+        let queryString = ' UPDATE ' + table;
+        queryString += ' SET ';
         queryString += objToSql(objColVals);
-        queryString += 'WHERE';
+        queryString += ' WHERE ';
         queryString += condition;
 
         console.log(queryString);
@@ -58,8 +58,8 @@ const orm = {
     },
 
     deleteOne: function (table, condition, cb) {
-        let queryString = 'DELETE FROM' + table;
-        queryString += 'WHERE';
+        let queryString = ' DELETE FROM ' + table;
+        queryString += ' WHERE ';
         queryString += condition;
 
         console.log(queryString);

@@ -5,14 +5,13 @@ $(function(){
         event.preventDefault();
         const newBurger= {
             burger_name : $('#newburger').val().trim(),
-            devoured: 0
+            devoured:0
         };
 
-        $.ajax('/api/burgers', {
+        $.ajax('/api/burgers/', {
             type: 'POST',
             data: newBurger
         }).then (function(){
-            console.log('add new burger');
             location.reload();
         });
     });
@@ -28,7 +27,6 @@ $(function(){
             type: 'PUT',
             data: devouredState
         }).then(function(){
-            console.log ('devoured burger');
             location.reload();
         });
     });
@@ -40,7 +38,6 @@ $(function(){
         $.ajax('/api/burgers/' + id,{
             type: 'DELETE'
         }).then(function(){
-            console.log('burger deleteds', id);
             location.reload();
         });
     });
